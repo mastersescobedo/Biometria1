@@ -1,0 +1,155 @@
+Prueba 1
+
+opt = keras.optimizers.RMSprop(lr=0.1, rho=0.9, epsilon=None, decay=0.0)
+model.compile(loss='sparse_categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+model.fit(x=X, y=y, batch_size=20, epochs=10, verbose=2)
+
+/home/sergio/anaconda3/bin/python /home/sergio/PycharmProjects/Biometria1/practica1.py
+Using TensorFlow backend.
+2018-03-16 18:10:55.981193: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:10:55.981210: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:10:55.981214: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:10:55.981217: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:10:55.981221: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:10:56.107620: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-03-16 18:10:56.107982: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 0 with properties:
+name: GeForce GTX 1050
+major: 6 minor: 1 memoryClockRate (GHz) 1.493
+pciBusID 0000:01:00.0
+Total memory: 3.95GiB
+Free memory: 3.67GiB
+2018-03-16 18:10:56.107993: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0
+2018-03-16 18:10:56.107997: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y
+2018-03-16 18:10:56.108018: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1050, pci bus id: 0000:01:00.0)
+Epoch 1/10
+58s - loss: 4.2999 - acc: 0.1943
+Epoch 2/10
+55s - loss: 1.9327 - acc: 0.7527
+Epoch 3/10
+55s - loss: 0.8370 - acc: 0.9216
+Epoch 4/10
+55s - loss: 0.3977 - acc: 0.9661
+Epoch 5/10
+55s - loss: 0.2088 - acc: 0.9849
+Epoch 6/10
+55s - loss: 0.1135 - acc: 0.9934
+Epoch 7/10
+55s - loss: 0.0707 - acc: 0.9971
+Epoch 8/10
+55s - loss: 0.0410 - acc: 0.9967
+Epoch 9/10
+55s - loss: 0.0268 - acc: 0.9993
+Epoch 10/10
+55s - loss: 0.0197 - acc: 0.9993
+
+Prueba 2
+
+opt = keras.optimizers.RMSprop(lr=0.1, rho=0.9, epsilon=None, decay=0.0)
+model.compile(loss='sparse_categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+model.fit(x=X, y=y, batch_size=20, epochs=10, validation_split=0.2, verbose=2)
+
+/home/sergio/anaconda3/bin/python /home/sergio/PycharmProjects/Biometria1/practica1.py
+Using TensorFlow backend.
+2018-03-16 18:26:10.256761: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:26:10.256778: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:26:10.256782: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:26:10.256785: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:26:10.256788: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:26:10.361043: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-03-16 18:26:10.361407: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 0 with properties:
+name: GeForce GTX 1050
+major: 6 minor: 1 memoryClockRate (GHz) 1.493
+pciBusID 0000:01:00.0
+Total memory: 3.95GiB
+Free memory: 3.67GiB
+2018-03-16 18:26:10.361418: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0
+2018-03-16 18:26:10.361422: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y
+2018-03-16 18:26:10.361427: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1050, pci bus id: 0000:01:00.0)
+Train on 2173 samples, validate on 544 samples
+Epoch 1/10
+58s - loss: 4.1606 - acc: 0.1864 - val_loss: 13.6111 - val_acc: 0.0000e+00
+Epoch 2/10
+54s - loss: 1.9599 - acc: 0.7483 - val_loss: 15.9549 - val_acc: 0.0055
+Epoch 3/10
+54s - loss: 0.8992 - acc: 0.9231 - val_loss: 15.9816 - val_acc: 0.0055
+Epoch 4/10
+54s - loss: 0.4460 - acc: 0.9636 - val_loss: 15.9249 - val_acc: 0.0074
+Epoch 5/10
+54s - loss: 0.2353 - acc: 0.9839 - val_loss: 15.8836 - val_acc: 0.0074
+Epoch 6/10
+54s - loss: 0.1335 - acc: 0.9917 - val_loss: 15.7911 - val_acc: 0.0055
+Epoch 7/10
+54s - loss: 0.0845 - acc: 0.9949 - val_loss: 15.6393 - val_acc: 0.0074
+Epoch 8/10
+54s - loss: 0.0502 - acc: 0.9991 - val_loss: 15.4940 - val_acc: 0.0074
+Epoch 9/10
+55s - loss: 0.0334 - acc: 0.9991 - val_loss: 15.2072 - val_acc: 0.0074
+Epoch 10/10
+55s - loss: 0.0242 - acc: 0.9991 - val_loss: 14.9324 - val_acc: 0.0074
+
+
+Prueba3
+
+x_train, x_val, y_train, y_val = model_selection.train_test_split(X, y,test_size=0.2, random_state=42)
+
+opt = keras.optimizers.RMSprop(lr=0.1, rho=0.9, epsilon=None, decay=0.0)
+model.compile(loss='sparse_categorical_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+
+model.fit(x=x_train, y=y_train, batch_size=20, epochs=10, validation_data=(x_val,y_val), verbose=2)
+
+
+/home/sergio/anaconda3/bin/python /home/sergio/PycharmProjects/Biometria1/practica1.py
+Using TensorFlow backend.
+2018-03-16 18:47:21.113697: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:47:21.113713: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:47:21.113717: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:47:21.113721: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:47:21.113724: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+2018-03-16 18:47:21.221510: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:893] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2018-03-16 18:47:21.221876: I tensorflow/core/common_runtime/gpu/gpu_device.cc:955] Found device 0 with properties:
+name: GeForce GTX 1050
+major: 6 minor: 1 memoryClockRate (GHz) 1.493
+pciBusID 0000:01:00.0
+Total memory: 3.95GiB
+Free memory: 3.66GiB
+2018-03-16 18:47:21.221888: I tensorflow/core/common_runtime/gpu/gpu_device.cc:976] DMA: 0
+2018-03-16 18:47:21.221891: I tensorflow/core/common_runtime/gpu/gpu_device.cc:986] 0:   Y
+2018-03-16 18:47:21.221897: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1045] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1050, pci bus id: 0000:01:00.0)
+Train on 2173 samples, validate on 544 samples
+Epoch 1/10
+58s - loss: 4.4867 - acc: 0.1394 - val_loss: 3.8726 - val_acc: 0.1305
+Epoch 2/10
+55s - loss: 2.3824 - acc: 0.6572 - val_loss: 1.8732 - val_acc: 0.7243
+Epoch 3/10
+55s - loss: 1.1600 - acc: 0.8840 - val_loss: 0.9786 - val_acc: 0.8585
+Epoch 4/10
+56s - loss: 0.5984 - acc: 0.9526 - val_loss: 0.6073 - val_acc: 0.9228
+Epoch 5/10
+56s - loss: 0.3210 - acc: 0.9784 - val_loss: 0.4413 - val_acc: 0.9283
+Epoch 6/10
+55s - loss: 0.1788 - acc: 0.9913 - val_loss: 0.3782 - val_acc: 0.9393
+Epoch 7/10
+55s - loss: 0.1074 - acc: 0.9959 - val_loss: 0.2787 - val_acc: 0.9485
+Epoch 8/10
+55s - loss: 0.0645 - acc: 0.9977 - val_loss: 0.2301 - val_acc: 0.9577
+Epoch 9/10
+55s - loss: 0.0407 - acc: 0.9986 - val_loss: 0.2281 - val_acc: 0.9504
+Epoch 10/10
+55s - loss: 0.0272 - acc: 0.9986 - val_loss: 0.2041 - val_acc: 0.9485
+
+
+Experimento con data augmentation 5 epocas
+
+88s - loss: 4.5575 - acc: 0.1075 - val_loss: 4.0649 - val_acc: 0.1544
+85s - loss: 2.9735 - acc: 0.4246 - val_loss: 3.3796 - val_acc: 0.2721
+86s - loss: 2.0318 - acc: 0.6169 - val_loss: 2.8560 - val_acc: 0.3640
+85s - loss: 1.5081 - acc: 0.7176 - val_loss: 2.6298 - val_acc: 0.3934
+85s - loss: 1.1663 - acc: 0.7771 - val_loss: 2.3423 - val_acc: 0.4596
+
+Test
+
+[1.9840987334681992, 0.52173913093314916]
+
+Con 10 epocas
+
+[1.4224048729325616, 0.62876254230438666]
